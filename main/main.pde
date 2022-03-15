@@ -1,7 +1,14 @@
+final int WINDOW_WIDTH = 1000;
+final int WINDOW_HEIGHT = 1000;
+
+final int VIRTUR_WINDOW_WIDTH = 1600;
+final int VIRTUR_WINDOW_HEIGHT = 900;
+
+
 Window window = new Window();
 
 void setup() {
-  window.setWindow(1000, 1000, 1600, 900);
+  window.setWindow(WINDOW_WIDTH, WINDOW_HEIGHT, VIRTUR_WINDOW_WIDTH, VIRTUR_WINDOW_HEIGHT);
 }
 
 void draw() {
