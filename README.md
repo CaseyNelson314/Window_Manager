@@ -5,7 +5,7 @@
 
 仮想ウィンドウ上の座標をx,y関数に通すことで座標を対応させられます
 
-## 動作(gif)
+## 動作例(gif)
 ![window](https://user-images.githubusercontent.com/91818705/158534591-432041db-7ee9-4687-83a7-a17a283faf0f.gif)
 
 ## Function
