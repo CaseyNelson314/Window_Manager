@@ -7,7 +7,7 @@ class Window {
   private int vWindow_x, vWindow_y; //仮想ウィンドウサイズ
   private float left_x, left_y, right_x, right_y; //仮想ウィンドウ座標
 
-  private float widthPerHeight, heightPerWidth;
+  private float widthPerHeight, heightPerWidth; //縦横比
 
   //初期画面Xピクセル,初期画面Yピクセル,仮想画面Xピクセル,仮想画面Yピクセル
   void setWindow(int pixel_x, int pixel_y, int vPixel_x, int vPixel_y) {
@@ -20,31 +20,31 @@ class Window {
   }
   
 
-  //仮想ウィンドウ内座標 > 実ウィンドウ座標
-  float x(float pixel_x) {
+  //仮想ウィンドウでの座標 > 実ウィンドウでの座標
+  float x(float point_x) {
     updatePoint_x();
     float vWindowSize = right_x - left_x;
-    return left_x + vWindowSize*pixel_x/vWindow_x;
+    return left_x + vWindowSize*point_x/vWindow_x;
   }
-  float y(float pixel_y) {
+  float y(float point_y) {
     updatePoint_y();
     float vWindowSize = right_y - left_y;
-    return left_y + vWindowSize*pixel_y/vWindow_y;
+    return left_y + vWindowSize*point_y/vWindow_y;
   }
   
 
-  //実ウィンドウ座標 > 仮想ウィンドウ内座標
-  float vx(float pixel_x) {
+  //実ウィンドウでの座標 > 仮想ウィンドウでの座標
+  float vx(float point_x) {
     updatePoint_x();
-    return (pixel_x-left_x)*vWindow_x/getWidth();
+    return (point_x-left_x)*vWindow_x/getWidth();
   }
-  float vy(float pixel_y) {
+  float vy(float point_y) {
     updatePoint_y();
-    return (pixel_y-left_y)*vWindow_y/getHeight();
+    return (point_y-left_y)*vWindow_y/getHeight();
   }
   
 
-  //仮想ウィンドウ長さ > 実ウィンドウ長さ
+  //仮想ウィンドウでのサイズ > 実ウィンドウでのサイズ
   float width(float _width) {
     updatePoint_x();
     return getWidth() * _width / vWindow_x;
@@ -55,7 +55,7 @@ class Window {
   }
   
 
-  //戻り値:仮想ウィンドウサイズ(実ウィンドウpx)
+  //仮想ウィンドウサイズ取得(実ウィンドウサイズ)
   float getWidth() {
     updatePoint_x();
     return right_x - left_x;
