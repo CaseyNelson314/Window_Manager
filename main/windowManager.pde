@@ -11,15 +11,15 @@ class Window {
 
   private void updatePoint() {
     if (width * heightPerWidth >= height) { //横幅オーバー
-      left_x=width/2 - height*widthPerHeight/2;
-      left_y=0;
-      right_x=width/2 + height*widthPerHeight/2;
-      right_y=height;
+      left_x = width/2 - height*widthPerHeight/2;
+      left_y = 0;
+      right_x = width/2 + height*widthPerHeight/2;
+      right_y = height;
     } else { //縦幅オーバー
-      left_x=0;
-      left_y=height/2 - width*heightPerWidth/2;
-      right_x=width;
-      right_y=height/2 + width*heightPerWidth/2;
+      left_x = 0;
+      left_y = height/2 - width*heightPerWidth/2;
+      right_x = width;
+      right_y = height/2 + width*heightPerWidth/2;
     }
   }
 
@@ -37,20 +37,20 @@ class Window {
   float x(float pixel_x) {
     updatePoint();
     float vWindowSize = right_x-left_x;
-    return left_x + vWindowSize / vWindow_x * pixel_x;
+    return left_x + vWindowSize/vWindow_x*pixel_x;
   }
   float y(float pixel_y) {
     updatePoint();
     float vWindowSize = right_y-left_y;
-    return left_y + vWindowSize / vWindow_y * pixel_y;
+    return left_y + vWindowSize/vWindow_y*pixel_y;
   }
   
   //戻り値:仮想ウィンドウのサイズ(実ウィンドウpx)
   float getWidth(){
-    return right_x-left_x;
+    return right_x - left_x;
   }
   float getHeight(){
-    return right_y-left_y;
+    return right_y - left_y;
   }
 
   //実ウィンドウ座標 戻り値:仮想ウィンドウ内座標
