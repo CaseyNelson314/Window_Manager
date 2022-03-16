@@ -10,6 +10,9 @@ Window window = new Window();
 void setup() {
   //初期サイズ、仮想ウィンドウサイズを設定
   window.setWindow(WINDOW_WIDTH, WINDOW_HEIGHT, VIRTUR_WINDOW_WIDTH, VIRTUR_WINDOW_HEIGHT);
+  
+  //仮想ウィンドウの拡大率を設定
+  window.setWindowRatio(80);
 }
 
 void draw() {
