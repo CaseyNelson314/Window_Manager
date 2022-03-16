@@ -12,7 +12,7 @@ void setup() {
   window.setWindow(WINDOW_WIDTH, WINDOW_HEIGHT, VIRTUR_WINDOW_WIDTH, VIRTUR_WINDOW_HEIGHT);
   
   //仮想ウィンドウの拡大率を設定
-  window.setWindowRatio(80);
+  window.setWindowRatio(80,80);
 }
 
 void draw() {
