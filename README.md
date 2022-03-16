@@ -10,7 +10,7 @@
 
 ## Function
 - `setWindow(height, width, virtual_height, virtual_width)`初期ウィンドウ,仮想ウィンドウのサイズを設定
-- `setWindowRatio(ratio)`ウィンドウ拡大率(%)
+- `setWindowRatio(ratio_width, ratio_height)`ウィンドウ拡大率(%)
 - `x(virtual_x)`仮想ウィンドウx座標からメインウィンドウx座標を取得
 - `y(virtual_y)`仮想ウィンドウy座標からメインウィンドウy座標を取得
 - `vx(x)`メインウィンドウx座標から仮想ウィンドウx座標を取得
