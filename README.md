@@ -5,8 +5,10 @@
 
 仮想ウィンドウ上の座標をx,y関数に通すことで座標を対応させられます
 
+## 動作(gif)
 ![window](https://user-images.githubusercontent.com/91818705/158534591-432041db-7ee9-4687-83a7-a17a283faf0f.gif)
 
+## Function
 - `setWindow(height, width, virtual_height, virtual_width)`初期ウィンドウ,仮想ウィンドウの幅高さを設定
 - `x(virtual_x), y(virtual_y)`仮想ウィンドウ上座標からメインウィンドウ上座標を取得
 - `getWidth()`仮想ウィンドウの幅を取得
