@@ -9,5 +9,5 @@
 
 ![image](https://user-images.githubusercontent.com/91818705/158425427-0c967ade-4549-42be-897a-10bae9208292.png)
 
-- setWindow関数で初期ウィンドウ,仮想ウィンドウの幅高さを設定
-- x,y関数で仮想ウィンドウの座標からメインウィンドウの座標へ変換
+- `setWindow()`初期ウィンドウ,仮想ウィンドウの幅高さを設定
+- `x(virtual_x), y(virtual_y)`仮想ウィンドウ上座標からメインウィンドウ上座標
