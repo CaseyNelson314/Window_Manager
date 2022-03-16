@@ -11,3 +11,5 @@
 
 - `setWindow(height, width, virtual_height, virtual_width)`初期ウィンドウ,仮想ウィンドウの幅高さを設定
 - `x(virtual_x), y(virtual_y)`仮想ウィンドウ上座標からメインウィンドウ上座標を取得
+- `getWidth()`仮想ウィンドウの幅を取得
+- `getheight()`仮想ウィンドウの高さを取得
