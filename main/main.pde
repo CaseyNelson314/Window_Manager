@@ -10,17 +10,17 @@ Window window = new Window();
 void setup() {
   //初期サイズ、仮想ウィンドウサイズを設定
   window.setWindow(WINDOW_WIDTH, WINDOW_HEIGHT, VIRTUR_WINDOW_WIDTH, VIRTUR_WINDOW_HEIGHT);
-  
-  //仮想ウィンドウの拡大率を設定
-  window.setWindowRatio(80,80);
+
+  //仮想ウィンドウの余白率を設定
+  window.margin(10, 10);
 }
 
 void draw() {
   background(255);
-  
+
   //仮想ウィンドウを表示
   window.drawWindow();
-  
+
   //四角形をウィンドウの中心に表示
   fill(100);
   rectMode(CENTER);

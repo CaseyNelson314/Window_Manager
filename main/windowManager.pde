@@ -4,7 +4,7 @@
  */
 
 class Window {
-  private float ratio_width,ratio_height;
+  private float margin_width, margin_height;
   private int vWindow_x, vWindow_y; //仮想ウィンドウサイズ
   private float left_x, left_y, right_x, right_y; //仮想ウィンドウ座標
 
@@ -19,13 +19,13 @@ class Window {
     vWindow_x = vPixel_x;
     vWindow_y = vPixel_y;
   }
-  
-  //画面拡大率(％)
-  void setWindowRatio(float ratio_width, float ratio_height){
-    this.ratio_width = ratio_width/100;
-    this.ratio_height = ratio_height/100;
+
+  //余白率(％)
+  void margin(float margin_width, float margin_height) {
+    this.margin_width = 1 - margin_width/100;
+    this.margin_height = 1 - margin_height/100;
   }
-  
+
 
   //仮想ウィンドウでの座標 > 実ウィンドウでの座標
   float x(float point_x) {
@@ -38,7 +38,7 @@ class Window {
     float vWindowSize = right_y - left_y;
     return left_y + vWindowSize*point_y/vWindow_y;
   }
-  
+
 
   //実ウィンドウでの座標 > 仮想ウィンドウでの座標
   float vx(float point_x) {
@@ -49,7 +49,7 @@ class Window {
     updatePoint_y();
     return (point_y-left_y)*vWindow_y/getHeight();
   }
-  
+
 
   //仮想ウィンドウでのサイズ > 実ウィンドウでのサイズ
   float width(float _width) {
@@ -60,7 +60,7 @@ class Window {
     updatePoint_y();
     return getHeight() * _height / vWindow_y;
   }
-  
+
 
   //仮想ウィンドウサイズ取得(実ウィンドウサイズ)
   float getWidth() {
@@ -84,27 +84,27 @@ class Window {
     fill(0);
     textSize(10);
     textAlign(LEFT, TOP);
-    text("virtual window ("+vWindow_x+"×"+vWindow_y+") "+ratio_width*100+"% × "+ratio_height*100+"%", left_x, left_y);
+    text("virtual window ("+vWindow_x+"×"+vWindow_y+") "+int(margin_width*100)+"% × "+int(margin_height*100)+"%", left_x, left_y);
     textAlign(LEFT, DOWN);
   }
-  
+
 
   private void updatePoint_x() {
     if (width * heightPerWidth >= height) { //横幅オーバー
-      left_x = width/2 - height*widthPerHeight/2*ratio_width;
-      right_x = width/2 + height*widthPerHeight/2*ratio_width;
+      left_x = width/2 - height*widthPerHeight/2*margin_width;
+      right_x = width/2 + height*widthPerHeight/2*margin_width;
     } else { //縦幅オーバー
-      left_x = width*(1-ratio_width)/2;
-      right_x = width*(1+ratio_width)/2;
+      left_x = width*(1-margin_width)/2;
+      right_x = width*(1+margin_width)/2;
     }
   }
   private void updatePoint_y() {
     if (width * heightPerWidth >= height) { //横幅オーバー
-      left_y = height*(1-ratio_height)/2;
-      right_y = height*(1+ratio_height)/2;
+      left_y = height*(1-margin_height)/2;
+      right_y = height*(1+margin_height)/2;
     } else { //縦幅オーバー
-      left_y = height/2 - width*heightPerWidth/2*ratio_height;
-      right_y = height/2 + width*heightPerWidth/2*ratio_height;
+      left_y = height/2 - width*heightPerWidth/2*margin_height;
+      right_y = height/2 + width*heightPerWidth/2*margin_height;
     }
   }
 };
