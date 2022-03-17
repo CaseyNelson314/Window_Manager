@@ -4,7 +4,7 @@
  */
 
 class Window {
-  private float margin_width, margin_height;
+  private float margin;
   private int vWindow_x, vWindow_y; //仮想ウィンドウサイズ
   private float left_x, left_y, right_x, right_y; //仮想ウィンドウ座標
 
@@ -21,9 +21,8 @@ class Window {
   }
 
   //余白率(％)
-  void margin(float margin_width, float margin_height) {
-    this.margin_width = 1 - margin_width/100;
-    this.margin_height = 1 - margin_height/100;
+  void margin(float margin) {
+    this.margin = 1 - margin/100;
   }
 
 
@@ -84,27 +83,27 @@ class Window {
     fill(0);
     textSize(10);
     textAlign(LEFT, TOP);
-    text("virtual window ("+vWindow_x+"×"+vWindow_y+") "+int(margin_width*100)+"% × "+int(margin_height*100)+"%", left_x, left_y);
+    text("virtual window ("+vWindow_x+"×"+vWindow_y+") "+int(margin*100)+"%", left_x, left_y);
     textAlign(LEFT, DOWN);
   }
 
 
   private void updatePoint_x() {
     if (width * heightPerWidth >= height) { //横幅オーバー
-      left_x = width/2 - height*widthPerHeight/2*margin_width;
-      right_x = width/2 + height*widthPerHeight/2*margin_width;
+      left_x = width/2 - height*widthPerHeight*margin/2;
+      right_x = width/2 + height*widthPerHeight*margin/2;
     } else { //縦幅オーバー
-      left_x = width*(1-margin_width)/2;
-      right_x = width*(1+margin_width)/2;
+      left_x = width*(1-margin)/2;
+      right_x = width*(1+margin)/2;
     }
   }
   private void updatePoint_y() {
     if (width * heightPerWidth >= height) { //横幅オーバー
-      left_y = height*(1-margin_height)/2;
-      right_y = height*(1+margin_height)/2;
+      left_y = height*(1-margin)/2;
+      right_y = height*(1+margin)/2;
     } else { //縦幅オーバー
-      left_y = height/2 - width*heightPerWidth/2*margin_height;
-      right_y = height/2 + width*heightPerWidth/2*margin_height;
+      left_y = height/2 - width*heightPerWidth*margin/2;
+      right_y = height/2 + width*heightPerWidth*margin/2;
     }
   }
 };

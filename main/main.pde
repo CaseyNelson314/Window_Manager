@@ -2,7 +2,7 @@ final int WINDOW_WIDTH = 1000;
 final int WINDOW_HEIGHT = 1000;
 
 final int VIRTUR_WINDOW_WIDTH = 400;
-final int VIRTUR_WINDOW_HEIGHT = 300;
+final int VIRTUR_WINDOW_HEIGHT = 600;
 
 
 Window window = new Window();
@@ -12,7 +12,7 @@ void setup() {
   window.setWindow(WINDOW_WIDTH, WINDOW_HEIGHT, VIRTUR_WINDOW_WIDTH, VIRTUR_WINDOW_HEIGHT);
 
   //仮想ウィンドウの余白率を設定
-  window.margin(10, 10);
+  window.margin(10);
 }
 
 void draw() {
