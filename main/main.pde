@@ -24,5 +24,5 @@ void draw() {
   //四角形をウィンドウの中心に表示
   fill(100);
   rectMode(CENTER);
-  rect(window.x(200), window.y(150), window.width(100), window.height(75));
+  rect(window.x(200), window.y(300), window.width(100), window.height(75));
 }
