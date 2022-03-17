@@ -10,7 +10,7 @@
 
 ## Function
 - `setWindow(height, width, virtual_height, virtual_width)`初期ウィンドウ,仮想ウィンドウのサイズを設定
-- `margin(ratio_width, ratio_height)`余白率(%)
+- `margin()`余白率(%)
 - `x(virtual_x)`仮想ウィンドウx座標からメインウィンドウx座標を取得
 - `y(virtual_y)`仮想ウィンドウy座標からメインウィンドウy座標を取得
 - `vx(x)`メインウィンドウx座標から仮想ウィンドウx座標を取得
