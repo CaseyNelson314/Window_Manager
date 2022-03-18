@@ -28,12 +28,12 @@ class Window {
 
   //仮想ウィンドウでの座標 > 実ウィンドウでの座標
   float x(float point_x) {
-    updatePoint_x();
+    update();
     float vWindowSize = right_x - left_x;
     return left_x + vWindowSize*point_x/vWindow_x;
   }
   float y(float point_y) {
-    updatePoint_y();
+    update();
     float vWindowSize = right_y - left_y;
     return left_y + vWindowSize*point_y/vWindow_y;
   }
@@ -41,40 +41,39 @@ class Window {
 
   //実ウィンドウでの座標 > 仮想ウィンドウでの座標
   float vx(float point_x) {
-    updatePoint_x();
+    update();
     return (point_x-left_x)*vWindow_x/getWidth();
   }
   float vy(float point_y) {
-    updatePoint_y();
+    update();
     return (point_y-left_y)*vWindow_y/getHeight();
   }
 
 
   //仮想ウィンドウでのサイズ > 実ウィンドウでのサイズ
   float width(float _width) {
-    updatePoint_x();
+    update();
     return getWidth() * _width / vWindow_x;
   }
   float height(float _height) {
-    updatePoint_y();
+    update();
     return getHeight() * _height / vWindow_y;
   }
 
 
   //仮想ウィンドウサイズ取得(実ウィンドウサイズ)
   float getWidth() {
-    updatePoint_x();
+    update();
     return right_x - left_x;
   }
   float getHeight() {
-    updatePoint_y();
+    update();
     return right_y - left_y;
   }
 
 
   void drawWindow() {
-    updatePoint_x();
-    updatePoint_y();
+    update();
     fill(200);
     noStroke();
     rectMode(CORNERS);
@@ -88,20 +87,24 @@ class Window {
   }
 
 
-  private void updatePoint_x() {
+  private int lastSize;
+  boolean sizeUpdate() {
+    boolean isUpdate = false;
+    if (lastSize!=width+height)isUpdate = true;
+    lastSize = width + height;
+    return isUpdate;
+  }
+
+  private void update() {
+    if (sizeUpdate()==false)return;
     if (width * heightPerWidth >= height) { //横幅オーバー
       left_x = width/2 - height*widthPerHeight*margin/2;
       right_x = width/2 + height*widthPerHeight*margin/2;
-    } else { //縦幅オーバー
-      left_x = width*(1-margin)/2;
-      right_x = width*(1+margin)/2;
-    }
-  }
-  private void updatePoint_y() {
-    if (width * heightPerWidth >= height) { //横幅オーバー
       left_y = height*(1-margin)/2;
       right_y = height*(1+margin)/2;
     } else { //縦幅オーバー
+      left_x = width*(1-margin)/2;
+      right_x = width*(1+margin)/2;
       left_y = height/2 - width*heightPerWidth*margin/2;
       right_y = height/2 + width*heightPerWidth*margin/2;
     }
