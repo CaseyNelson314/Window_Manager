@@ -86,6 +86,7 @@ class Window {
     drawGrid(100, 100);
   }
   void drawGrid(float _width, float _height) {
+    update();
     stroke(160);
     fill(0);
     textSize(10);
