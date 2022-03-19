@@ -99,6 +99,7 @@ class Window {
       text((int)i, left_x, y(i));
       line(left_x+26, y(i), right_x, y(i));
     }
+    textAlign(LEFT, DOWN);
   }
 
   //サイズ変更判定
