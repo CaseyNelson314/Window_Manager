@@ -23,15 +23,15 @@ class Window {
 
 
   //仮想ウィンドウでの座標 > 実ウィンドウでの座標
-  int x(float point_x) {
+  float x(float point_x) {
     update();
     float vWindowSize = right_x - left_x;
-    return int(left_x + vWindowSize*point_x/vWindow_width);
+    return left_x + vWindowSize*point_x/vWindow_width;
   }
-  int y(float point_y) {
+  float y(float point_y) {
     update();
     float vWindowSize = right_y - left_y;
-    return int(left_y + vWindowSize*point_y/vWindow_height);
+    return left_y + vWindowSize*point_y/vWindow_height;
   }
 
 
@@ -47,13 +47,13 @@ class Window {
 
 
   //仮想ウィンドウでのサイズ > 実ウィンドウでのサイズ
-  int width(float _width) {
+  float width(float _width) {
     update();
-    return int(getWidth() * _width / vWindow_width);
+    return getWidth() * _width / vWindow_width;
   }
-  int height(float _height) {
+  float height(float _height) {
     update();
-    return int(getHeight() * _height / vWindow_height);
+    return getHeight() * _height / vWindow_height;
   }
 
 
