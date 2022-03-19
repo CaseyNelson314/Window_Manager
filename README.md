@@ -8,7 +8,7 @@
 ![window](https://user-images.githubusercontent.com/91818705/159107665-3fc22cf0-02a2-46c4-b076-ab1a900b6aec.gif)
 
 ## Function
-- `setWindow(height, width, virtual_height, virtual_width)`初期ウィンドウ,仮想ウィンドウのサイズを設定
+- `window(height, width, virtual_height, virtual_width)`初期ウィンドウ,仮想ウィンドウのサイズを設定
 - `margin()`余白率(百分率%)
 - `x(virtual_x)`仮想ウィンドウx座標からメインウィンドウx座標を取得
 - `y(virtual_y)`仮想ウィンドウy座標からメインウィンドウy座標を取得
@@ -19,3 +19,4 @@
 - `getWidth()`仮想ウィンドウの幅をメインウィンドウでの幅として取得
 - `getHeight()`仮想ウィンドウの高さをメインウィンドウでの高さとして取得
 - `drawWindow()`仮想ウィンドウの位置を表示
+- `drawGrid()`罫線表示
