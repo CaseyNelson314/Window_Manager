@@ -6,11 +6,12 @@
 仮想ウィンドウ上の座標をx,y関数に通すことで座標を対応させられます
 
 ## 動作例(gif)
-![window](https://user-images.githubusercontent.com/91818705/158534591-432041db-7ee9-4687-83a7-a17a283faf0f.gif)
+
+![window](https://user-images.githubusercontent.com/91818705/159107665-3fc22cf0-02a2-46c4-b076-ab1a900b6aec.gif)
 
 ## Function
 - `setWindow(height, width, virtual_height, virtual_width)`初期ウィンドウ,仮想ウィンドウのサイズを設定
-- `margin()`余白率(%)
+- `margin()`余白率(百分率%)
 - `x(virtual_x)`仮想ウィンドウx座標からメインウィンドウx座標を取得
 - `y(virtual_y)`仮想ウィンドウy座標からメインウィンドウy座標を取得
 - `vx(x)`メインウィンドウx座標から仮想ウィンドウx座標を取得
