@@ -4,7 +4,7 @@
  */
 
 class Window {
-  private float margin;
+  private float margin = 1;
   private int vWindow_x, vWindow_y; //仮想ウィンドウサイズ
   private float left_x, left_y, right_x, right_y; //仮想ウィンドウ座標
 
