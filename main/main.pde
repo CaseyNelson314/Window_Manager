@@ -11,7 +11,7 @@ void setup() {
   window.window(WINDOW_WIDTH, WINDOW_HEIGHT, VIRTUR_WINDOW_WIDTH, VIRTUR_WINDOW_HEIGHT);
   
   //仮想ウィンドウの余白率を設定(百分率)
-  //window.margin(10);
+  //window.margin(40);
 }
 
 void draw() {
