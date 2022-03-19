@@ -70,12 +70,12 @@ class Window {
 
   void drawWindow() {
     update();
-    fill(200);
+    fill(200, 200);
     noStroke();
     rectMode(CORNERS);
     rect(left_x, left_y, right_x, right_y);
     rectMode(CORNER);
-    fill(0);
+    fill(0, 200);
     textSize(10);
     textAlign(RIGHT, DOWN);
     text("virtual window ("+vWindow_width+"×"+vWindow_height+") margin "+int(margin*100)+"%", right_x-5, right_y-5);
@@ -88,7 +88,7 @@ class Window {
   void drawGrid(float _width, float _height) {
     update();
     stroke(160);
-    fill(0);
+    fill(0, 100);
     textSize(10);
     for (float i=_width; i<vWindow_width; i+=_width) { //縦ライン
       textAlign(CENTER, TOP);

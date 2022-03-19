@@ -11,7 +11,7 @@ void setup() {
   window.window(WINDOW_WIDTH, WINDOW_HEIGHT, VIRTUR_WINDOW_WIDTH, VIRTUR_WINDOW_HEIGHT);
   
   //仮想ウィンドウの余白率を設定(百分率)
-  //window.margin(40);
+  window.margin(20);
 }
 
 void draw() {
@@ -24,6 +24,6 @@ void draw() {
   
   //四角形を描画
   fill(100);
-  rectMode(CENTER);
-  rect(window.x(200), window.y(300), window.width(100), window.height(75));
+  rectMode(CORNER);
+  rect(window.x(200), window.y(300), window.width(100), window.height(200));
 }
